@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bầu chọn Bí thư Tỉnh ủy Gia Lai</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+</head>
+<body>
+  <!-- Hạc bay và nền trống đồng -->
+  <img src="hac-trai.png" alt="Hạc trái" class="hac-trai">
+  <img src="hac-phai.png" alt="Hạc phải" class="hac-phai">
+
+  <header>
+    <h1>HỆ THỐNG BẦU CHỌN BÍ THƯ TỈNH ỦY GIA LAI</h1>
+    <p><i>Nhiệm kỳ 2025–2030 | Dân chủ – Công bằng – Minh bạch – Đoàn kết</i></p>
+  </header>
+
+  <main>
+    <!-- Xác thực OTP -->
+    <section id="otp-section">
+      <h3>Xác thực cử tri</h3>
+      <input type="email" id="email" placeholder="Nhập email công dân">
+      <button onclick="sendOTP()">Gửi mã OTP</button><br>
+      <input type="text" id="otp" placeholder="Nhập mã OTP">
+      <button onclick="verifyOTP()">Xác minh</button>
+      <p id="otpStatus"></p>
+    </section>
+
+    <!-- Kết nối ví -->
+    <section id="connect-section">
+      <button id="connectButton" disabled>Kết nối ví MetaMask</button>
+      <p id="status"></p>
+    </section>
+
+    <!-- Danh sách ứng viên -->
+    <section id="voting-section">
+      <h2>Danh sách ứng viên và Bầu chọn</h2>
+      <div id="candidateList" class="candidates-grid"></div>
+    </section>
+
+    <!-- Kết quả -->
+    <section id="result-section">
+      <h3>Kết quả Bầu chọn</h3>
+      <div id="resultBox" class="results-table"></div>
+      <button id="refreshResult">Cập nhật Kết quả</button>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Ủy ban Bầu cử tỉnh Gia Lai – Blockchain for DVAN
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
